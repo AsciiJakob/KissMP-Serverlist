@@ -25,7 +25,7 @@ body {
   table, th, td {
     border-collapse: collapse;
   }
-  td, th {
+  td, th{
    font-family: Arial !important;
    color: white;
    font-size: 20px;
@@ -77,4 +77,13 @@ body {
   }
   .map {
       text-align: center;
+  }
+  .sourceCodeText {
+    position:absolute;bottom:0;
+    font-family: Arial !important;
+    color: white;
+    font-size: 15px;
+  }
+  .sourceCodeHref:visited {
+    color: white;
   }
