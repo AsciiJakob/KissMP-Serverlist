@@ -36,7 +36,9 @@ body {
   td {
     border-right: 1px solid rgb(48, 52, 54);
   }
-  tr:hover {background-color: black;}
+  .serverCell:hover, .topThing:hover {
+    background-color: rgba(15, 15, 15, 0.8);
+  }
   td:nth-child(2n), th:nth-child(2n){
     text-align: center
   }
@@ -68,6 +70,7 @@ body {
     font-size: 25px;
     background-color: rgba(24, 26, 27, 0.8);
     border-bottom: 1px solid rgb(128, 128, 128);
+    cursor: pointer;
   }
   .serverList{
     background-color: rgba(24, 26, 27, 0.6);
