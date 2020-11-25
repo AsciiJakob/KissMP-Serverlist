@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <title>KissMP Serverlist</title>
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="KissMP Serverlist" />
+        <meta property="og:description" content="A webpage for viewing the KissMP serverlist without having to launch the game" />
+    </head>
+    <body>
+      <div class="tableContainer">
+        <table class="sortable">
+          <tbody class="serverList">
+            <tr>
+                <th class="name topThing">Server Name</th>
+                <th class="players topThing">Players</th>
+                <th class="map topThing">Map</th>
+                <th class="ping topThing">Ping</th>
+            </tr>
+              <tr>
+                <!-- Servers will be put here-->
+                <td>Server list is loading...</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<script src="index.js"></script>

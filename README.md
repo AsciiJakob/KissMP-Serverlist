@@ -1,2 +1,2 @@
 # KissMP-Serverlist
-A serverlist for the Beamng Drive multiplayer mod "KissMP" 
+A serverlist for the Beamng Drive multiplayer mod "KissMP"

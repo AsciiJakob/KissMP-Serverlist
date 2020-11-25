@@ -1,0 +1,80 @@
+body {
+    background-image: url(background.png);
+    background-color: rgb(37, 40, 40);
+    background-size: 100% auto;
+    background-repeat:no-repeat;
+  }
+  .sortable {
+    width: 100%;
+  }
+  .tableContainer {
+    width:100%;
+  }
+  .name {
+    width: 75%;
+  }
+  .players {
+    width: 5%;
+  }
+  .map {
+    width: 10%;
+  }
+  .ping {
+    width: 10%;
+  }
+  table, th, td {
+    border-collapse: collapse;
+  }
+  td, th {
+   font-family: Arial !important;
+   color: white;
+   font-size: 20px;
+  }
+  table, th, td {
+    border-collapse: collapse;
+  }
+  td {
+    border-right: 1px solid rgb(48, 52, 54);
+  }
+  tr:hover {background-color: black;}
+  td:nth-child(2n), th:nth-child(2n){
+    text-align: center
+  }
+  .sortable {
+    width: 100%;
+  }
+  .tableContainer {
+    width:100%;
+    border: 1px solid white;
+    border-bottom-color: rgb(128, 128, 128);
+    border-left-color: rgb(128, 128, 128);
+    border-right-color: rgb(128, 128, 128);
+    border-top-color: rgb(128, 128, 128);
+  }
+  .name {
+    width: 82%;
+  }
+  .players {
+    width: 5%;
+  }
+  .map {
+    width: 10%;
+  }
+  .ping {
+    width: 3%;
+  }
+  .topThing {
+    text-align: left;
+    font-size: 25px;
+    background-color: rgba(24, 26, 27, 0.8);
+    border-bottom: 1px solid rgb(128, 128, 128);
+  }
+  .serverList{
+    background-color: rgba(24, 26, 27, 0.6);
+  }
+  .serverCell {
+    border-bottom: 1px solid rgb(48, 52, 54);
+  }
+  .map {
+      text-align: center;
+  }
