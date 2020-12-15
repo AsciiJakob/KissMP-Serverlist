@@ -1,4 +1,4 @@
-const express = require("express")
+ const express = require("express")
 const app = express();
 const axios = require('axios');
 
@@ -28,6 +28,12 @@ app.get("/getData", async (req, res) => {
         await updateCache();
         console.log("cache updated")
     }
+    // let cacheSecondsLeft = Math.round(((cache.age - Date.now()) + 4000) / 1000);
+    // res.setHeader('Cache-Control', `max-age=${cacheSecondsLeft}, must-revalidate`);
+    // spent ages trying to get this working on firefox but never did. Worked fine on chrome. 
+    // so i'll make the client not do any caching at all. It doesn't really matter, i'm just being nit-picky.
+    res.setHeader('Cache-Control', 'no-store');
+
     res.send(cache.servers);
 })
 
