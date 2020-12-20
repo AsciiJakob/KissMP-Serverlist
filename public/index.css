@@ -1,9 +1,12 @@
 body {
-    background-image: url(background.png);
+    background-image: url("/content/background.png");
     background-color: rgb(37, 40, 40);
     background-size: 100% auto;
     background-repeat:no-repeat;
   }
+  .arial, td, th {
+    font-family: Arial !important;
+  }  
   .sortable {
     width: 100%;
   }
@@ -26,7 +29,6 @@ body {
     border-collapse: collapse;
   }
   td, th{
-   font-family: Arial !important;
    color: white;
    font-size: 20px;
   }
@@ -83,10 +85,13 @@ body {
   }
   .sourceCodeText {
     position:absolute;bottom:0;
-    font-family: Arial !important;
     color: white;
     font-size: 15px;
   }
   .sourceCodeHref:visited, .sourceCodeHref{
     color: white;
+  }
+  .errorText {
+    display: none;
+    color: red;
   }

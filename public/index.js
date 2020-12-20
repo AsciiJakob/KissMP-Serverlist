@@ -1,9 +1,12 @@
 var serverListTable = document.querySelector(".serverList");
 
 axios.get('/getData').then((res) => {
-    clearServerList();
-    addServers(res.data)
-    
+  if (res.data.error) {
+    displayError(res.data);
+    return;
+  }
+  clearServerList();
+  addServers(res.data);
 });
 
 
@@ -16,7 +19,7 @@ function addServers(servers) {
         let serverContainer = document.createElement("tr"); // create the container/row for the server
         serverContainer.className = "serverCell"
         const server = servers[num];
-        let cellValues = [
+        const cellValues = [
           server.name, // Server Name
           server.player_count+"/"+server.max_players, // Players
           parseMap(server.map), // Map
@@ -30,6 +33,19 @@ function addServers(servers) {
 
         serverListTable.appendChild(serverContainer); // add the row to the server table
     }
+}
+
+function displayError(data) {
+  let errorText = document.querySelector(".errorText");
+  errorText.style.display = "block";
+  if (data.none) {
+    errorText.innerText = "Failed to fetch the serverlist.";
+    return;
+  }
+  const howOld = Math.round((Date.now() - data.age) / 1000);
+  errorText.innerText = "Failed to fetch new information from the server, results below are "+howOld+" seconds old.";
+  clearServerList();
+  addServers(data);
 }
 
 function parseMap(map) {
