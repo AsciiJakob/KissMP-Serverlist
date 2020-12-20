@@ -1,12 +1,15 @@
 var serverListTable = document.querySelector(".serverList");
 
 axios.get('/getData').then((res) => {
-  if (res.data.error) {
-    displayError(res.data);
+  let data = res.data;
+  if (data.alert) displayAlert(data);
+  if (data.error) {
+    displayError(data);
     return;
   }
+  
   clearServerList();
-  addServers(res.data);
+  addServers(data);
 });
 
 
@@ -34,7 +37,11 @@ function addServers(servers) {
         serverListTable.appendChild(serverContainer); // add the row to the server table
     }
 }
+function parseMap(map) {
+  return map.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"". For example; "/levels/east_coast_usa/info.json", would return just "east_coast_usa"
+  }
 
+  
 function displayError(data) {
   let errorText = document.querySelector(".errorText");
   errorText.style.display = "block";
@@ -48,6 +55,8 @@ function displayError(data) {
   addServers(data);
 }
 
-function parseMap(map) {
-return map.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"". For example; "/levels/east_coast_usa/info.json", would return just "east_coast_usa"
+function displayAlert(data) {
+  let alertText = document.querySelector(".alertText");
+  alertText.style.display = "block";
+  alertText.innerText = data.alert;
 }

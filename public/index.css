@@ -91,6 +91,10 @@ body {
   .sourceCodeHref:visited, .sourceCodeHref{
     color: white;
   }
+  .alertText {
+    display: none;
+    color: orange;
+  }
   .errorText {
     display: none;
     color: red;

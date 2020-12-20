@@ -1,9 +1,11 @@
- const express = require("express")
+const express = require("express")
 const app = express();
 const axios = require('axios');
 
+const alert = "";
 var cache = {lastUpdated: Date.now()}
 updateCache();
+
 function updateCache() {
     return new Promise(resolve => {
         axios.get('http://localhost:4300/', {timeout: 1000}).then((apiRequest) => {
@@ -34,11 +36,11 @@ app.use(express.static(__dirname + '/public', {
 
 app.get("/getData", async (req, res) => {
     res.setHeader('Cache-Control', 'no-store'); // Tells the browser not to cache this request.
+    if (alert) cache.servers.alert = alert;
     if (cache.lastUpdated < Date.now() - 4000) { // if the cached serverlist is 4 seconds or more old.
         await updateCache();
         console.log("cache updated");
     }
-
     res.send(cache.servers);
 });
 
