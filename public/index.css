@@ -1,8 +1,10 @@
 body {
     background-image: url("/content/background.png");
     background-color: rgb(37, 40, 40);
-    background-size: 100% auto;
+    /* background-size: 100% auto; */
     background-repeat:no-repeat;
+
+    background-size: auto 100%;
   }
   .arial, td, th {
     font-family: Arial !important;
@@ -84,7 +86,8 @@ body {
       text-align: center;
   }
   .sourceCodeText {
-    position:absolute;bottom:0;
+    position:absolute;
+    bottom:0;
     color: white;
     font-size: 15px;
   }
@@ -98,4 +101,11 @@ body {
   .errorText {
     display: none;
     color: red;
+  }
+  .detailsText {
+    color: white;
+    font-size: 150%;
+  }
+  .detailsDiv {
+    background-color: rgba(24, 26, 27, 0.6);
   }
