@@ -9,7 +9,7 @@ updateCache();
 function updateCache() {
     return new Promise(resolve => {
         axios.get('http://51.210.135.45:3692/', {timeout: 1000}).then((apiRequest) => {
-            console.log("api is succesding");
+            console.log("api is succeeding");
             cache.lastUpdated = Date.now();
             cache.servers = apiRequest.data;
             for (const server in cache.servers) {
