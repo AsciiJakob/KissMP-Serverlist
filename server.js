@@ -35,6 +35,7 @@ app.use(express.static(__dirname + '/public', {
 }));
 
 app.get("/getData", async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow the api to be accessed from anywhere.
     res.setHeader('Cache-Control', 'no-store'); // Tells the browser not to cache this request.
     if (alert) cache.servers.alert = alert;
     if (cache.lastUpdated < Date.now() - 4000) { // if the cached serverlist is 4 seconds or more old.
