@@ -11,7 +11,7 @@ axios.get('/getData').then((res) => {
   
   clearServerList();
   addServers(data);
-  displayServerInfo(document.querySelector(".serverCell"));
+  // displayServerInfo(document.querySelector(".serverCell")); // make the top-most server selected in the details section
 });
 
 
@@ -46,6 +46,7 @@ function addServers(servers) {
 }
 
 function displayServerInfo(cell) {
+  document.querySelector(".detailsDiv").style.display = "block";
   let old = document.querySelector(".selected");
   if (old) old.classList.remove("selected"); // unselect previous selected one if we had one (:
 
