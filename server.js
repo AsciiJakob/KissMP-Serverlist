@@ -45,4 +45,4 @@ app.get("/getData", async (req, res) => {
     res.send(cache.servers);
 });
 
-app.listen(4200);
+app.listen(4001);
