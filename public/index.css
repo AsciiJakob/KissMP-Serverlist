@@ -1,102 +1,135 @@
 body {
-    background-image: url("/content/background.png");
-    background-color: rgb(37, 40, 40);
-    background-size: 100% auto;
-    background-repeat:no-repeat;
-  }
-  .arial, td, th {
-    font-family: Arial !important;
-  }  
-  .sortable {
-    width: 100%;
-  }
-  .tableContainer {
-    width:100%;
-  }
-  .name {
-    width: 75%;
-  }
-  .players {
-    width: 5%;
-  }
-  .map {
-    width: 10%;
-  }
-  .ping {
-    width: 10%;
-  }
-  table, th, td {
-    border-collapse: collapse;
-  }
-  td, th{
-   color: white;
-   font-size: 20px;
-  }
-  table, th, td {
-    border-collapse: collapse;
-  }
-  td {
-    border-right: 1px solid rgb(48, 52, 54);
-  }
-  .serverCell:hover, .topThing:hover {
-    background-color: rgba(15, 15, 15, 0.8);
-  }
-  td:nth-child(2n), th:nth-child(2n){
-    text-align: center
-  }
-  .sortable {
-    width: 100%;
-  }
-  .tableContainer {
-    width:100%;
-    border: 1px solid white;
-    border-bottom-color: rgb(128, 128, 128);
-    border-left-color: rgb(128, 128, 128);
-    border-right-color: rgb(128, 128, 128);
-    border-top-color: rgb(128, 128, 128);
-  }
-  .name {
-    width: 82%;
-  }
-  .players {
-    width: 5%;
-  }
-  .map {
-    width: 10%;
-  }
-  .ping {
-    width: 3%;
-  }
-  .topThing {
-    text-align: left;
-    font-size: 25px;
-    background-color: rgba(24, 26, 27, 0.8);
-    border-bottom: 1px solid rgb(128, 128, 128);
-    cursor: pointer;
-  }
-  .serverList{
-    background-color: rgba(24, 26, 27, 0.6);
-  }
-  .serverCell {
-    border-bottom: 1px solid rgb(48, 52, 54);
-  }
-  .map {
-      text-align: center;
-  }
-  .sourceCodeText {
-    position:absolute;
-    bottom:0;
-    color: white;
-    font-size: 15px;
-  }
-  .sourceCodeHref:visited, .sourceCodeHref{
-    color: white;
-  }
-  .alertText {
-    display: none;
-    color: orange;
-  }
-  .errorText {
-    display: none;
-    color: red;
-  }
+  background-image: url("/content/background.png");
+  background-color: rgb(37, 40, 40);
+  background-size: 100% auto;
+  background-repeat:no-repeat;
+}
+
+.arial, td, th {
+  font-family: Arial !important;
+}  
+.sortable {
+  width: 100%;
+}
+.name {
+  width: 75%;
+}
+.players {
+  width: 5%;
+}
+.map {
+  width: 10%;
+}
+.ping {
+  width: 10%;
+}
+table, th, td {
+  border-collapse: collapse;
+}
+td, th{
+ color: white;
+ font-size: 20px;
+}
+table, th, td {
+  border-collapse: collapse;
+}
+td {
+  border-right: 1px solid rgb(48, 52, 54);
+}
+td:nth-child(2n), th:nth-child(2n){
+  text-align: center
+}
+.sortable {
+  width: 100%;
+}
+.tableContainer {
+  width:100%;
+  height: 60vh;
+  border: 1px solid white;
+  border-bottom-color: rgb(128, 128, 128);
+  border-left-color: rgb(128, 128, 128);
+  border-right-color: rgb(128, 128, 128);
+  border-top-color: rgb(128, 128, 128);
+}
+/* Scrollbar Stuff */
+.tableContainer {
+  overflow-y: scroll;
+  overflow-x: hidden; /* Prevent horizontal scrollbar on chrome*/
+  /* Firefox & Edge Scrollbar*/
+  scrollbar-color: rgb(54, 52, 52) rgb(0, 0, 0);
+  scrollbar-width: thin;
+}
+/* chrome & others Scrollbar*/
+::-webkit-scrollbar {
+  width: 1vh;
+}
+::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(54, 52, 52)
+}
+/* Scrollbar Stuff */
+
+.name {
+  width: 82%;
+}
+.players {
+  width: 5%;
+}
+.map {
+  width: 10%;
+}
+.ping {
+  width: 3%;
+}
+.topThing {
+  text-align: left;
+  font-size: 25px;
+  background-color: rgba(24, 26, 27, 0.8);
+  border-bottom: 1px solid rgb(128, 128, 128);
+  cursor: pointer;
+}
+.serverList{
+  background-color: rgba(24, 26, 27, 0.6);
+}
+.serverCell {
+  border-bottom: 1px solid rgb(48, 52, 54);
+  cursor: pointer;
+}
+.serverCell:hover, .topThing:hover {
+  background-color: rgba(15, 15, 15, 0.5);
+}
+.serverCell.selected { /* Selected ServerCells */
+  background-color: rgba(12, 12, 12, 0.9);
+}
+.serverCell.selected:hover {
+  background-color: rgba(12, 12, 12, 0.8);
+}
+.map {
+    text-align: center;
+}
+.sourceCodeText {
+  position:absolute;
+  bottom:0;
+  color: white;
+  font-size: 15px;
+}
+.sourceCodeHref:visited, .sourceCodeHref{
+  color: white;
+}
+.alertText {
+  display: none;
+  color: orange;
+}
+.errorText {
+  display: none;
+  color: red;
+}
+.detailsText {
+  color: white;
+  font-size: 150%;
+}
+.detailsDiv {
+  /* background-color: rgba(24, 26, 27, 0.6); */
+}
