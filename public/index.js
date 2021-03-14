@@ -1,7 +1,8 @@
 var serverListTable = document.querySelector(".serverList");
+var data;
 
 axios.get('/getData').then((res) => {
-  let data = res.data;
+  data = res.data;
   if (data.alert) displayAlert(data);
   if (data.error) {
     displayError(data);
@@ -10,6 +11,7 @@ axios.get('/getData').then((res) => {
   
   clearServerList();
   addServers(data);
+  displayServerInfo(document.querySelector(".serverCell"));
 });
 
 
@@ -18,28 +20,53 @@ function clearServerList() {
 }
 
 function addServers(servers) {
-  for (const num in servers) { // loop through all of the servers
-        let serverContainer = document.createElement("tr"); // create the container/row for the server
-        serverContainer.className = "serverCell"
-        const server = servers[num];
-        const cellValues = [
-          server.name, // Server Name
-          server.player_count+"/"+server.max_players, // Players
-          parseMap(server.map), // Map
-          server.ping || NaN // Ping
-        ]
-        for (let x=0; x < cellValues.length; x++) {
-          let newCell = document.createElement("td");
-          newCell.innerText = cellValues[x];
-          serverContainer.appendChild(newCell);
-        }
-
-        serverListTable.appendChild(serverContainer); // add the row to the server table
+  for (const ip in servers) { // loop through all of the servers
+    let serverContainer = document.createElement("tr"); // create the container/row for the server
+    serverContainer.className = "serverCell"
+    serverContainer.id = ip;
+    serverContainer.onclick = () => {
+      displayServerInfo(serverContainer);
     }
-}
-function parseMap(map) {
-  return map.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"". For example; "/levels/east_coast_usa/info.json", would return just "east_coast_usa"
+    
+    const server = servers[ip];
+    const cellValues = [
+      server.name, // Server Name
+      server.player_count+"/"+server.max_players, // Players
+      parseMap(server.map), // Map
+      server.ping || NaN // Ping
+    ]
+    for (let x=0; x < cellValues.length; x++) {
+      let newCell = document.createElement("td");
+      newCell.innerText = cellValues[x];
+      serverContainer.appendChild(newCell);
+    }
+
+    serverListTable.appendChild(serverContainer); // add the row to the server table
   }
+}
+
+function displayServerInfo(cell) {
+  let old = document.querySelector(".selected");
+  if (old) old.classList.remove("selected"); // unselect previous selected one if we had one (:
+
+  cell.classList.add("selected");
+  let info = data[cell.id];
+  let detailsDiv = document.querySelector(".detailsDiv");
+
+  let {name, description, map, player_count, max_players, version} = info;
+  values = [
+    `Name: ${name}`,
+    `Description: ${description}`,
+    `Map: `+parseMap(map),
+    `Players: ${player_count}/${max_players}`,
+    `IP Address: ${cell.id}`,
+    `Version: ${version[0]}.${version[1]}`
+  ]
+  for (let i=0; i < detailsDiv.children.length; i++) {
+    let child = detailsDiv.children[i];
+    child.innerText = values[i];
+  }
+}
 
   
 function displayError(data) {
@@ -59,4 +86,7 @@ function displayAlert(data) {
   let alertText = document.querySelector(".alertText");
   alertText.style.display = "block";
   alertText.innerText = data.alert;
+}
+function parseMap(map) {
+  return map.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"". For example; "/levels/east_coast_usa/info.json", would return just "east_coast_usa"
 }
