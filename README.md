@@ -1,8 +1,14 @@
 # KissMP-Serverlist
+![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fkissmpservers.jakobs.work%2F) 
+![Docker Status](https://img.shields.io/docker/cloud/build/asciijakob/kissmp-serverlist)
+![Git Commits](https://img.shields.io/github/commit-activity/m/AsciiJakob/KissMP-Serverlist)
+
+
 A serverlist for the Beamng Drive multiplayer mod "KissMP"
 
-[Preview](https://imgur.com/TD8Nevp)
-Hosted at: [https://www.kissmpservers.jakobs.work](https://kissmpservers.jakobs.work/)
+[Image Preview](https://imgur.com/TD8Nevp)
+
+The website is also hosted at: [https://www.kissmpservers.jakobs.work](https://kissmpservers.jakobs.work/)
 
 [DockerHub Repository](https://hub.docker.com/r/asciijakob/kissmp-serverlist)
 
