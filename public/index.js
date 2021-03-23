@@ -52,7 +52,7 @@ function displayServerInfo(cell) {
 
   cell.classList.add("selected");
   let info = data[cell.id];
-  let detailsDiv = document.querySelector(".detailsDiv");
+  let detailsDiv = document.querySelector(".detailsTextContainer");
 
   let {name, description, map, player_count, max_players, version} = info;
   values = [
