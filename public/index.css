@@ -137,8 +137,8 @@ td:nth-child(2n), th:nth-child(2n){
 }
 .detailsDiv {
   visibility: hidden;
-  /* width: 85%; */
   height: 35vh;
+  width: 100%;
   background-color: rgba(24, 26, 27, 0.767);
   border: black 1px solid;
 }
