@@ -46,7 +46,7 @@ function addServers(servers) {
 }
 
 function displayServerInfo(cell) {
-  document.querySelector(".detailsDiv").style.display = "block";
+  document.querySelector(".detailsDiv").style.visibility = "visible";
   let old = document.querySelector(".selected");
   if (old) old.classList.remove("selected"); // unselect previous selected one if we had one (:
 
@@ -73,6 +73,7 @@ function displayServerInfo(cell) {
 function displayError(data) {
   let errorText = document.querySelector(".errorText");
   errorText.style.display = "block";
+  correctDetailsHeight();
   if (data.none) {
     errorText.innerText = "Failed to fetch the serverlist.";
     return;
@@ -87,7 +88,16 @@ function displayAlert(data) {
   let alertText = document.querySelector(".alertText");
   alertText.style.display = "block";
   alertText.innerText = data.alert;
+  correctDetailsHeight();
+}
+
+
+
+function correctDetailsHeight() { // makes the details div slightly shorter so the ERROR or ALERT text will fit.
+  console.log("Correcting details div")
+  document.querySelector(".detailsDiv").style.height = "31vh";
+
 }
 function parseMap(map) {
-  return map.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"". For example; "/levels/east_coast_usa/info.json", would return just "east_coast_usa"
-}
+  return map.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"".
+}                                                 // For example; "/levels/east_coast_usa/info.json", would return just "east_coast_usa".

@@ -112,6 +112,7 @@ td:nth-child(2n), th:nth-child(2n){
 .sourceCodeText {
   position:absolute;
   bottom:0;
+  text-align: right;
   color: white;
   font-size: 15px;
 }
@@ -119,7 +120,7 @@ td:nth-child(2n), th:nth-child(2n){
   color: white;
 }
 .alertText {
-  display: none;
+  display: block;
   color: orange;
 }
 .errorText {
@@ -131,7 +132,7 @@ td:nth-child(2n), th:nth-child(2n){
   font-size: 150%;
 }
 .detailsDiv {
-  display: none;
+  visibility: hidden;
   /* width: 85%; */
   height: 35vh;
   background-color: rgba(24, 26, 27, 0.767);
