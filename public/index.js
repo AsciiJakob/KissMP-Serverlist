@@ -33,7 +33,7 @@ function addServers(servers) {
       server.name, // Server Name
       server.player_count+"/"+server.max_players, // Players
       parseMap(server.map), // Map
-      server.ping || NaN // Ping
+      // server.ping || NaN // Ping
     ]
     for (let x=0; x < cellValues.length; x++) {
       let newCell = document.createElement("td");

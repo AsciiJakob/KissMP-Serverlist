@@ -20,9 +20,6 @@ body {
 .map {
   width: 10%;
 }
-.ping {
-  width: 10%;
-}
 table, th, td {
   border-collapse: collapse;
 }
@@ -79,9 +76,6 @@ td:nth-child(2n), th:nth-child(2n){
 }
 .map {
   width: 10%;
-}
-.ping {
-  width: 3%;
 }
 .topThing {
   text-align: left;
