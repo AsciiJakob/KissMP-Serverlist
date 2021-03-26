@@ -48,24 +48,16 @@ function addServers(servers) {
 function displayServerInfo(cell) {
   document.querySelector(".detailsDiv").style.visibility = "visible";
   let old = document.querySelector(".selected");
-  if (old) old.classList.remove("selected"); // unselect previous selected one if we had one (:
-
-  cell.classList.add("selected");
-  let info = data[cell.id];
-  let detailsDiv = document.querySelector(".detailsTextContainer");
+  if (old) old.classList.remove("selected"); // unselect previous selected server if we had one
+  cell.classList.add("selected"); // add the selected class to our new selected server
+  let info = data[cell.id]; // extract the server details from the data object (using the new server elements id which is the servers ip address and port)
+  let valueElements = document.getElementsByClassName("detailsValue");
 
   let {name, description, map, player_count, max_players, version} = info;
-  values = [
-    `Name: ${name}`,
-    `Description: ${description}`,
-    `Map: `+parseMap(map),
-    `Players: ${player_count}/${max_players}`,
-    `IP Address: ${cell.id}`,
-    `Version: ${version[0]}.${version[1]}`
-  ]
-  for (let i=0; i < detailsDiv.children.length; i++) {
-    let child = detailsDiv.children[i];
-    child.innerText = values[i];
+  let serverInfo = [name, description, parseMap(map), player_count+"/"+max_players, cell.id, version[0]+"."+version[1]];
+  for (let i=0; i <valueElements.length; i++) { // fill all the values
+    const element = valueElements[i]
+    element.innerText = serverInfo[i];
   }
 }
 

@@ -120,7 +120,7 @@ td:nth-child(2n), th:nth-child(2n){
   display: none;
   color: red;
 }
-.detailsText {
+.detailsTextContainer > * { /* All childrens inside of the details text container */ 
   color: white;
   font-size: 120%;
   margin-left: 1vh;
