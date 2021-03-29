@@ -30,10 +30,9 @@ function addServers(servers) {
     
     const server = servers[ip];
     const cellValues = [
-      server.name, // Server Name
+      limitLength(server.name, 100), // Server Name
       server.player_count+"/"+server.max_players, // Players
-      parseMap(server.map), // Map
-      // server.ping || NaN // Ping
+      limitLength(parseMap(server.map), 25), // Map
     ]
     for (let x=0; x < cellValues.length; x++) {
       let newCell = document.createElement("td");
@@ -84,11 +83,16 @@ function displayAlert(data) {
 }
 
 
-
 function correctDetailsHeight() { // makes the details div slightly shorter so the ERROR or ALERT text will fit.
   console.log("Correcting details div")
   document.querySelector(".detailsDiv").style.height = "31vh";
-
+}
+  
+function limitLength(str, maxLength) {
+  if (str.length > maxLength) {
+    return str.slice(0, maxLength-3)+"..."
+  }
+  return str;
 }
 function parseMap(map) {
   return map.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"".
