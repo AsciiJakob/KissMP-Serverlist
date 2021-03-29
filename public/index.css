@@ -33,10 +33,12 @@ table, th, td {
 td {
   border-right: 1px solid rgb(48, 52, 54);
 }
-td:nth-child(2n), th:nth-child(2n){
+td:nth-child(2n), th:nth-child(2n) { /* Rows inside of the Players Column */ 
   text-align: center;
 }
-
+td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */ 
+  text-align: center;
+}
 .sortable {
   width: 100%;
 }
