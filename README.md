@@ -4,7 +4,7 @@
 ![Git Commits](https://img.shields.io/github/commit-activity/m/AsciiJakob/KissMP-Serverlist)
 
 
-A serverlist for the Beamng Drive multiplayer mod "KissMP"
+A serverlist for the Beamng Drive multiplayer mod [KissMP](https://github.com/TheHellBox/KISS-multiplayer)
 
 [Image Preview](https://imgur.com/TD8Nevp)
 
