@@ -34,8 +34,9 @@ td {
   border-right: 1px solid rgb(48, 52, 54);
 }
 td:nth-child(2n), th:nth-child(2n){
-  text-align: center
+  text-align: center;
 }
+
 .sortable {
   width: 100%;
 }
@@ -68,15 +69,6 @@ td:nth-child(2n), th:nth-child(2n){
 }
 /* Scrollbar Stuff */
 
-.name {
-  width: 82%;
-}
-.players {
-  width: 5%;
-}
-.map {
-  width: 10%;
-}
 .topThing {
   text-align: left;
   font-size: 25px;
@@ -135,4 +127,25 @@ td:nth-child(2n), th:nth-child(2n){
   width: 100%;
   background-color: rgba(24, 26, 27, 0.767);
   border: black 1px solid;
+}
+
+@media screen and (max-width: 800px) { /* Runs the folowing CSS if the user is a mobile/smaller device*/
+  .sourceCodeText{
+    display: none;
+  }
+  body {
+    background-image: none;
+    background-color: rgb(37, 40, 40);
+  }
+  td:nth-child(3n), th:nth-child(3n){ /* Prevent the Map column from appearing. */
+    display: none;
+  }
+  .detailsDiv { /* Prevent the mobile browser search bar from showing up and dissapearing when scrolling. */
+    height: 30vh;
+  }
+  tr { /* More consistent sizing of the server rows. */
+    height: 5vh;
+    overflow:hidden;
+  }
+
 }
