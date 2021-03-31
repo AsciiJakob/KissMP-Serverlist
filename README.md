@@ -8,7 +8,7 @@ A serverlist for the Beamng Drive multiplayer mod [KissMP](https://github.com/Th
 
 [Image Preview](https://imgur.com/TD8Nevp)
 
-The website is also hosted at: [https://www.kissmpservers.jakobs.work](https://kissmpservers.jakobs.work/)
+The website is also hosted at: [https://kissmpservers.jakobs.work](https://kissmpservers.jakobs.work/)
 
 [DockerHub Repository](https://hub.docker.com/r/asciijakob/kissmp-serverlist)
 
