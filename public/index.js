@@ -1,17 +1,19 @@
 var serverListTable = document.querySelector(".serverList");
-var data;
+var serversData;
 
-axios.get('/getData').then((res) => {
-  data = res.data;
-  if (data.alert) displayAlert(data);
-  if (data.error) {
-    displayError(data);
+axios.get('/getData').then((response) => {
+  serversData = response.data;
+
+  if (serversData.alert) {
+    displayAlert(serversData);
+  }
+  if (serversData.error) {
+    displayError(serversData);
     return;
   }
   
   clearServerList();
-  addServers(data);
-  // displayServerInfo(document.querySelector(".serverCell")); // make the top-most server selected in the details section
+  addServers(serversData);
 });
 
 
@@ -20,40 +22,47 @@ function clearServerList() {
 }
 
 function addServers(servers) {
-  for (const ip in servers) { // loop through all of the servers
-    let serverContainer = document.createElement("tr"); // create the container/row for the server
-    serverContainer.className = "serverCell"
-    serverContainer.id = ip;
-    serverContainer.onclick = () => {
-      displayServerInfo(serverContainer);
+  for (const ip in servers) {
+    // create element
+    let serverRow = document.createElement("tr");
+    serverRow.className = "serverCell"
+    serverRow.id = ip;
+    serverRow.onclick = () => {
+      displayServerInfo(serverRow);
     }
     
+    // parse server info
     const server = servers[ip];
     const cellValues = [
       limitLength(server.name, 100), // Server Name
       server.player_count+"/"+server.max_players, // Players
       limitLength(parseMap(server.map), 25), // Map
     ]
-    for (let x=0; x < cellValues.length; x++) {
+    // fill the server element with it's information
+    for (let i=0; i < cellValues.length; i++) {
       let newCell = document.createElement("td");
-      newCell.innerText = cellValues[x];
-      serverContainer.appendChild(newCell);
+      newCell.innerText = cellValues[i];
+      serverRow.appendChild(newCell);
     }
 
-    serverListTable.appendChild(serverContainer); // add the row to the server table
+    // add the row to the server table
+    serverListTable.appendChild(serverRow);
   }
 }
 
-function displayServerInfo(cell) {
-  document.querySelector(".detailsDiv").style.visibility = "visible";
-  let old = document.querySelector(".selected");
-  if (old) old.classList.remove("selected"); // unselect previous selected server if we had one
-  cell.classList.add("selected"); // add the selected class to our new selected server
-  let info = data[cell.id]; // extract the server details from the data object (using the new server elements id which is the servers ip address and port)
+function displayServerInfo(row) {
+  let detailsDiv = document.querySelector(".detailsDiv");
+  detailsDiv.style.visibility = "visible";
+
+  let oldSelection = document.querySelector(".selected");
+  if (oldSelection) oldSelection.classList.remove("selected"); // unselect previous selected server if we had one
+  row.classList.add("selected");
+
+  let info = serversData[row.id];
   let valueElements = document.getElementsByClassName("detailsValue");
 
   let {name, description, map, player_count, max_players, version} = info;
-  let serverInfo = [name, description, parseMap(map), player_count+"/"+max_players, cell.id, version[0]+"."+version[1]];
+  let serverInfo = [name, description, parseMap(map), player_count+"/"+max_players, row.id, version[0]+"."+version[1]];
   for (let i=0; i <valueElements.length; i++) { // fill all the values
     const element = valueElements[i]
     element.innerText = serverInfo[i];
@@ -94,6 +103,6 @@ function limitLength(str, maxLength) {
   }
   return str;
 }
-function parseMap(map) {
-  return map.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"".
+function parseMap(mapPath) {
+  return mapPath.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"".
 }                                                 // For example; "/levels/east_coast_usa/info.json", would return just "east_coast_usa".
