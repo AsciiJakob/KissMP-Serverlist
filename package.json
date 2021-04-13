@@ -2,12 +2,13 @@
   "name": "kissmp-serverlist",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/AsciiJakob/KissMP-Serverlist"
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "JakobJakobJakob2",
-  "license": "ISC",
+  "author": "AsciiJakob",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1"
