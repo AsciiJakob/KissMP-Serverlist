@@ -74,12 +74,12 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
 .topThing {
   text-align: left;
   font-size: 25px;
-  background-color: rgba(24, 26, 27, 0.8);
+  background-color: rgba(16, 18, 19, 0.8);
   border-bottom: 1px solid rgb(128, 128, 128);
   cursor: pointer;
 }
 .serverList{
-  background-color: rgba(24, 26, 27, 0.6);
+  background-color: rgba(16, 18, 19, 0.6);
 }
 .serverCell {
   border-bottom: 1px solid rgb(48, 52, 54);
@@ -127,7 +127,7 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
   visibility: hidden;
   height: 34vh;
   width: 100%;
-  background-color: rgba(24, 26, 27, 0.767);
+  background-color: rgba(16, 18, 19, 0.767);
   border: black 1px solid;
 }
 
