@@ -6,7 +6,7 @@
 
 A serverlist for the Beamng Drive multiplayer mod [KissMP](https://github.com/TheHellBox/KISS-multiplayer)
 
-~~[Old Image Preview](https://imgur.com/TD8Nevp) ~~
+<del>[Old Image Preview](https://imgur.com/TD8Nevp)</del>
 
 [Image Preview](https://i.imgur.com/O1l3lUn.jpeg)
 
