@@ -111,8 +111,8 @@ function limitLength(str, maxLength) {
 }
 function parseMap(mapPath) {
   try {
-    return mapPath.match(/(?<=levels\/)(.*)(?=\/)/)[0]; // return everything inbetween "levels/" and the next "/"".
-  }                                                     // For example; "/levels/east_coast_usa/info.json", would return just "east_coast_usa".
+    return mapPath.split("levels/")[1].split("/")[0];
+  }
   catch {
     return mapPath;
   }
