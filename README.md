@@ -4,13 +4,11 @@
 ![Git Commits](https://img.shields.io/github/commit-activity/m/AsciiJakob/KissMP-Serverlist)
 
 
-A serverlist for the Beamng Drive multiplayer mod [KissMP](https://github.com/TheHellBox/KISS-multiplayer)
-
-<del>[Old Image Preview](https://imgur.com/TD8Nevp)</del>
+An external server list for the BeamNG.drive multiplayer mod ["KissMP"](https://github.com/TheHellBox/KISS-multiplayer)
 
 [Image Preview](https://i.imgur.com/O1l3lUn.jpeg)
 
-The website is also hosted at: [https://kissmpservers.jakobs.work](https://kissmpservers.jakobs.work/)
+The website is also hosted at [https://kissmpservers.jakobs.work](https://kissmpservers.jakobs.work/)
 
 [DockerHub Repository](https://hub.docker.com/r/asciijakob/kissmp-serverlist)
 
@@ -21,7 +19,7 @@ Run a container with the image:
 
 `docker run -d -p PORT:4001 asciijakob/kissmp-serverlist`
 
-Replace PORT with whatever port you wish the webserver to listen on.
+Replace PORT with whatever port you wish for the webserver to listen to.
 
 ## Without docker
 `git clone https://github.com/AsciiJakob/KissMP-Serverlist.git`
@@ -31,3 +29,4 @@ Replace PORT with whatever port you wish the webserver to listen on.
 `npm install`
 
 `node app.js`
+
