@@ -1,10 +1,3 @@
-body {
-  background-image: url("/content/background.png");
-  background-color: rgb(37, 40, 40);
-  background-size: 100% auto;
-  background-repeat:no-repeat;
-}
-
 .arial, td, th {
   font-family: Arial !important;
 }  
@@ -134,10 +127,6 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
 @media screen and (max-width: 800px) { /* Runs the folowing CSS if the user is a mobile/smaller device*/
   .sourceCodeText{
     display: none;
-  }
-  body {
-    background-image: none;
-    background-color: rgb(37, 40, 40);
   }
   td:nth-child(3n), th:nth-child(3n){ /* Prevent the Map column from appearing. */
     display: none;
