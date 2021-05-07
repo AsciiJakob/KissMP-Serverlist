@@ -1,13 +1,6 @@
 var serverListTable = document.querySelector(".serverList");
 var serversData;
 
-{ // random background color
-  let color = "rgb(39, "+(Math.floor(Math.random() * 141)+40)+", 81)"
-  console.log(color)
-  document.body.style.backgroundColor = color;
-}
-
-
 axios.get('/getData').then((response) => {
   serversData = response.data;
 
