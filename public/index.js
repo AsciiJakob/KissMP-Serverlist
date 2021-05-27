@@ -1,24 +1,21 @@
 var serverListTable = document.querySelector(".serverList");
 var serversData;
 
-axios.get('/getData').then((response) => {
+axios.get("/getData").then((response) => {
   serversData = response.data;
-
-  if (serversData.alert) {
-    displayAlert(serversData);
-  }
+  clearServerList();
+  
   if (serversData.error) {
     displayError(serversData);
     return;
   }
   
-  clearServerList();
   addServers(serversData);
 });
 
 
 function clearServerList() {
-  serverListTable.innerHTML = ""; // remove all children
+  serverListTable.innerHTML = ""; // removes all child elements
 }
 
 function addServers(servers) {
@@ -39,13 +36,12 @@ function addServers(servers) {
       limitLength(parseMap(server.map), 25), // Map
     ]
     // fill the server element with it's information
-    for (let i=0; i < cellValues.length; i++) {
+    for (cellValue in cellValues) {
       let newCell = document.createElement("td");
-      newCell.innerText = cellValues[i];
+      newCell.innerText = cellValues[cellValue];
       serverRow.appendChild(newCell);
     }
 
-    // add the row to the server table
     serverListTable.appendChild(serverRow);
   }
 }
@@ -69,7 +65,7 @@ function displayServerInfo(row) {
 
   let {name, description, map, player_count, max_players, version} = info;
   let serverInfo = [name, description, parseMap(map), player_count+"/"+max_players, row.id, version[0]+"."+version[1]];
-  for (let i=0; i <valueElements.length; i++) { // fill all the values
+  for (let i=0; i < valueElements.length; i++) { // fill all the values
     const element = valueElements[i]
     element.innerText = serverInfo[i];
   }
@@ -84,21 +80,13 @@ function displayError(data) {
     errorText.innerText = "Failed to fetch the serverlist.";
     return;
   }
-  const howOld = Math.round((Date.now() - data.age) / 1000);
-  errorText.innerText = "Failed to fetch new information from the server, results below are "+howOld+" seconds old.";
-  clearServerList();
+  const howOld = Math.round((Date.now() - data.age) / 60000);
+  errorText.innerText = "Failed to fetch new information from the server, results below are "+howOld+" Minutes old.";
   addServers(data);
 }
 
-function displayAlert(data) {
-  let alertText = document.querySelector(".alertText");
-  alertText.style.display = "block";
-  alertText.innerText = data.alert;
-  correctDetailsHeight();
-}
 
-
-function correctDetailsHeight() { // makes the details div slightly shorter so the ERROR or ALERT text will fit.
+function correctDetailsHeight() { // makes the details div slightly shorter so the ERROR text will fit.
   console.log("Correcting details div")
   document.querySelector(".detailsDiv").style.height = "31vh";
 }
@@ -109,6 +97,7 @@ function limitLength(str, maxLength) {
   }
   return str;
 }
+
 function parseMap(mapPath) {
   try {
     return mapPath.split("levels/")[1].split("/")[0];

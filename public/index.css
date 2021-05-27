@@ -102,10 +102,6 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
 .sourceCodeHref:visited, .sourceCodeHref{
   color: white;
 }
-.alertText {
-  display: block;
-  color: orange;
-}
 .errorText {
   display: none;
   color: red;
