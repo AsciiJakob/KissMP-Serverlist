@@ -2,7 +2,10 @@ const express = require("express")
 const app = express();
 const axios = require('axios');
 
-var cache = {lastUpdated: Date.now()}
+var cache = {
+    lastUpdated: Date.now(),
+    data: {}
+}
 updateCache();
 
 function updateCache() {
@@ -10,16 +13,18 @@ function updateCache() {
         axios.get('http://kissmp.online:3692/latest', {timeout: 1000}).then(apiRequest => {
             console.log("api is succeeding");
             cache.lastUpdated = Date.now();
-            cache.servers = sortByPlayercount(apiRequest.data);
+            cache.data = {
+                servers: sortByPlayercount(apiRequest.data)
+            };
             resolve();
         })
         .catch((err) => {
             console.log("Api is failing");
-            if (!cache.servers) {
-                cache.servers = {none: true}
+            if (!cache.data.servers) {
+                cache.data.servers = {none: true}
             };
-            cache.servers.error = err.code || true;
-            cache.servers.age = cache.lastUpdated;
+            cache.data.error = err.code || true;
+            cache.data.age = cache.lastUpdated;
             resolve();
         })
     });
@@ -35,7 +40,7 @@ app.get("/getData", async (req, res) => {
         await updateCache();
         console.log("cache updated");
     }
-    res.send(cache.servers);
+    res.send(cache.data);
 });
 
 app.listen(4001);

@@ -2,11 +2,11 @@ var serverListTable = document.querySelector(".serverList");
 var serversData;
 
 axios.get("/getData").then((response) => {
-  serversData = response.data;
+  serversData = response.data.servers;
   clearServerList();
   
-  if (serversData.error) {
-    displayError(serversData);
+  if (response.data.error) {
+    displayError(response.data);
     return;
   }
   
@@ -81,8 +81,8 @@ function displayError(data) {
     return;
   }
   const howOld = Math.round((Date.now() - data.age) / 60000);
-  errorText.innerText = "Failed to fetch new information from the server, results below are "+howOld+" Minutes old.";
-  addServers(data);
+  errorText.innerText = "Failed to fetch new information from the serverlist, results below are "+howOld+" Minutes old.";
+  addServers(data.servers);
 }
 
 
