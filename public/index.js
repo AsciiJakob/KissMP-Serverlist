@@ -82,12 +82,14 @@ function displayError(data) {
   }
   const howOld = Math.round((Date.now() - data.age) / 60000);
   errorText.innerText = "Failed to fetch new information from the serverlist, results below are "+howOld+" Minutes old.";
+  for (const ip in data.servers) {
+    data.servers[ip].player_count = "?";
+  }
   addServers(data.servers);
 }
 
 
 function correctDetailsHeight() { // makes the details div slightly shorter so the ERROR text will fit.
-  console.log("Correcting details div")
   document.querySelector(".detailsDiv").style.height = "31vh";
 }
   
