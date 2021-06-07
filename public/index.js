@@ -19,6 +19,7 @@ function clearServerList() {
 }
 
 function addServers(servers) {
+  let totalPlayerCount = 0;
   for (const ip in servers) {
     // create element
     let serverRow = document.createElement("tr");
@@ -41,9 +42,11 @@ function addServers(servers) {
       newCell.innerText = cellValues[cellValue];
       serverRow.appendChild(newCell);
     }
+    totalPlayerCount += server.player_count;
 
     serverListTable.appendChild(serverRow);
   }
+  document.querySelector(".players").innerText = "Players("+totalPlayerCount+")";
 }
 
 function displayServerInfo(row) {

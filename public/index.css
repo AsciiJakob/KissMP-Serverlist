@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(39, 54, 81);
+  background-color: rgb(16, 22, 32);
 }
 .arial, td, th {
   font-family: Arial !important;
@@ -21,7 +21,7 @@ table, th, td {
 }
 td, th{
  color: white;
- font-size: 20px;
+ font-size: 1.3rem;
 }
 table, th, td {
   border-collapse: collapse;
@@ -42,10 +42,10 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
   width:100%;
   height: 60vh;
   border: 1px solid white;
-  border-bottom-color: rgb(128, 128, 128);
-  border-left-color: rgb(128, 128, 128);
-  border-right-color: rgb(128, 128, 128);
-  border-top-color: rgb(128, 128, 128);
+  border-bottom-color: rgb(67, 167, 218);
+  border-left-color: rgb(67, 167, 218);
+  border-right-color: rgb(67, 167, 218);
+  border-top-color: rgb(67, 167, 218);
 }
 /* Scrollbar Stuff */
 .tableContainer {
@@ -69,26 +69,30 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
 
 .topThing {
   text-align: left;
-  font-size: 25px;
+  font-size: 1.6rem;
   background-color: rgba(16, 18, 19, 0.8);
-  border-bottom: 1px solid rgb(128, 128, 128);
+  border-bottom: 1px solid rgb(67, 167, 218);
   cursor: pointer;
 }
 .serverList{
-  background-color: rgba(16, 18, 19, 0.6);
+  /* background-color: rgba(16, 18, 19, 0.6); */
 }
 .serverCell {
-  border-bottom: 1px solid rgb(48, 52, 54);
+  border-bottom: 1px solid rgb(61, 61, 61);
+  height: 3.3vh;
   cursor: pointer;
 }
 .serverCell:hover, .topThing:hover {
-  background-color: rgba(15, 15, 15, 0.5);
+  background-color: rgba(65, 94, 122, 0.5);
 }
 .serverCell.selected { /* Selected ServerCells */
-  background-color: rgba(12, 12, 12, 0.9);
+  background-color: rgb(64, 116, 168)
+}
+.serverCell.selected > td {
+  color: black;
 }
 .serverCell.selected:hover {
-  background-color: rgba(12, 12, 12, 0.8);
+  background-color: rgb(90, 131, 172)
 }
 .map {
     text-align: center;
@@ -97,7 +101,7 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
   position:absolute;
   bottom:0;
   color: white;
-  font-size: 15px;
+  font-size: 0.9rem;
 }
 .sourceCodeHref:visited, .sourceCodeHref{
   color: white;
@@ -116,11 +120,23 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
   overflow-y: auto;
 }
 .detailsDiv {
+  margin-top: 1vh;
   visibility: hidden;
   height: 34vh;
   width: 100%;
   background-color: rgba(16, 18, 19, 0.767);
-  border: black 1px solid;
+  border: rgb(255, 0, 0) 1px solid;
+}
+.detailDescription {
+  display: inline-block;
+  width: 70%;
+  /* background-color: aliceblue; */
+}
+hr {
+  margin-top: -1vh;
+  margin-bottom: -1vh;
+  border-color: rgb(51, 51, 51);
+  width: 70%;
 }
 
 @media screen and (max-width: 800px) { /* Runs the folowing CSS if the user is a mobile/smaller device*/
@@ -133,9 +149,8 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
   .detailsDiv { /* Prevent the mobile browser search bar from showing up and dissapearing when scrolling. */
     height: 30vh;
   }
-  tr { /* More consistent sizing of the server rows. */
-    height: 5vh;
-    overflow:hidden;
+  .serverCell { /* More consistent sizing of the server rows. */
+    height: 6vh;
+    overflow: hidden;
   }
-
 }
