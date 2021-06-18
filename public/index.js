@@ -42,8 +42,10 @@ function addServers(servers) {
       newCell.innerText = cellValues[cellValue];
       serverRow.appendChild(newCell);
     }
-    totalPlayerCount += server.player_count;
 
+    if (Number.isInteger(server.player_count)) {
+      totalPlayerCount += server.player_count; 
+    }
     serverListTable.appendChild(serverRow);
   }
   document.querySelector(".players").innerText = "Players("+totalPlayerCount+")";
