@@ -1,7 +1,7 @@
 # KissMP-Serverlist
 ![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fkissmpservers.jakobs.work%2F) 
 ![Docker Status](https://img.shields.io/docker/cloud/build/asciijakob/kissmp-serverlist)
-![Git Commits](https://img.shields.io/github/commit-activity/m/AsciiJakob/KissMP-Serverlist)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/AsciiJakob/KissMP-Serverlist)
 
 
 An external server list for the BeamNG.drive multiplayer mod ["KissMP"](https://github.com/TheHellBox/KISS-multiplayer)
