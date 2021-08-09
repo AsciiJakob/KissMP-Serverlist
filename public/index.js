@@ -95,7 +95,7 @@ function displayError(data) {
 
 
 function correctDetailsHeight() { // makes the details div slightly shorter so the ERROR text will fit.
-  document.querySelector(".detailsDiv").style.height = "31vh";
+  document.querySelector(".detailsDiv").style.height = "29.5vh";
 }
   
 function limitLength(str, maxLength) {
