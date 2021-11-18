@@ -14,6 +14,17 @@ The website is also hosted at [https://kissmpservers.jakobs.work](https://kissmp
 
 # Running
 
+
+## Deploying with docker-compose (best option not one command as bottom but, more stable and easier to manage)
+
+
+1. Download docker-compose.yml from repo, or clone it
+2. Go to folder with docker-compose.yml
+3. If you want you can edit the `docker-compose.yml` before using, like change the port of app (change the 8080 do not touch port 4001 or app will stop working)
+4. Do `docker-compose up -d`
+5. Done ! :D
+
+
 ## Deploying with docker
 Run a container with the image:
 
