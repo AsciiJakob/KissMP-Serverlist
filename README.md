@@ -1,7 +1,7 @@
 
 # KissMP-Serverlist
 ![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fkissmpservers.jakobs.work%2F) 
-![Docker Status](https://img.shields.io/docker/cloud/build/asciijakob/kissmp-serverlist)
+![Deployment status](https://github.com/AsciiJakob/KissMP-Serverlist/actions/workflows/dockerhub-deploy.yml/badge.svg)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/AsciiJakob/KissMP-Serverlist)
 
 
