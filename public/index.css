@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(16, 22, 32);
+	background-color: rgb(4, 6, 19);
 }
 .arial, td, th {
   font-family: Arial !important;
@@ -20,7 +20,7 @@ table, th, td {
   border-collapse: collapse;
 }
 td, th{
- color: white;
+ color: #eae9e4;
  font-size: 1.3rem;
 }
 table, th, td {
@@ -83,16 +83,17 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
   cursor: pointer;
 }
 .serverCell:hover, .topThing:hover {
-  background-color: rgba(65, 94, 122, 0.5);
+  background-color: rgba(0, 130, 255, 0.5);
+  background-color: rgba(7, 48, 89, 0.5);
 }
 .serverCell.selected { /* Selected ServerCells */
-  background-color: rgb(64, 116, 168)
+  background-color: rgba(0, 130, 255, 0.5);
 }
 .serverCell.selected > td {
-  color: black;
+  /*color: black;*/
 }
 .serverCell.selected:hover {
-  background-color: rgb(90, 131, 172)
+  /*background-color: rgb(90, 131, 172)*/
 }
 .map {
     text-align: center;
@@ -117,7 +118,7 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
   text-align: center;
 }
 .detailsTextContainer > * { /* All childrens inside of the details text container */ 
-  color: white;
+  color: #eae9e4;
   font-size: 120%;
   margin-left: 1vh;
 }
