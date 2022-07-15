@@ -128,7 +128,7 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
 }
 .detailsDiv {
   margin-top: 1vh;
-  visibility: hidden;
+  display: none;
   height: 34vh;
   width: 100%;
   background-color: rgba(16, 18, 19, 0.767);
