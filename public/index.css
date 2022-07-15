@@ -110,6 +110,12 @@ td:nth-child(3n), th:nth-child(3n) { /* Rows inside of the Map Column */
   display: none;
   color: red;
 }
+.detailsInfoText {
+  color: white;
+  font-size: 120%;
+  margin-left: 1vh;
+  text-align: center;
+}
 .detailsTextContainer > * { /* All childrens inside of the details text container */ 
   color: white;
   font-size: 120%;

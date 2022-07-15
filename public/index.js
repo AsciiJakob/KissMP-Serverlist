@@ -53,13 +53,16 @@ function addServers(servers) {
 
 function displayServerInfo(row) {
   let detailsDiv = document.querySelector(".detailsDiv");
+  let detailsInfoText = document.querySelector(".detailsInfoText");
   detailsDiv.style.visibility = "visible";
+  detailsInfoText.style.display = "none";
 
   let oldSelection = document.querySelector(".selected");
   if (oldSelection) {
     oldSelection.classList.remove("selected"); // unselect previous selected server if we had one
     if (oldSelection.id == row.id) {
       detailsDiv.style.visibility = "hidden";
+      detailsInfoText.style.display = "block";
       return;
     }
   }
