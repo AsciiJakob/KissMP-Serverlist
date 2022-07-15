@@ -33,5 +33,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: AsciiJakob/kissmp-serverlist:latest
+          tags: asciijakob/kissmp-serverlist:latest
           labels: ${{ steps.meta.outputs.labels }}
