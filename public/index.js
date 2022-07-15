@@ -1,15 +1,15 @@
 var serverListTable = document.querySelector(".serverList");
 var serversData;
 
-axios.get("/getData").then((response) => {
-  serversData = response.data.servers;
+fetch("/getdata").then(response => response.json()).then(data => {
+  serversData = data.servers;
   clearServerList();
-  
-  if (response.data.error) {
-    displayError(response.data);
+
+  if (data.error) {
+    displayError(data);
     return;
   }
-  
+
   addServers(serversData);
 });
 
