@@ -3,5 +3,5 @@ services:
   kissmp-serverlist:
     image: asciijakob/kissmp-serverlist
     ports:
-      - "8080:4001"
-    restart: unless-stopped
+      - "4001:4001"
+    restart: always
