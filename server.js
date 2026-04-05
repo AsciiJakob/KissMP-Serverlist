@@ -10,7 +10,7 @@ updateCache();
 
 function updateCache() {
     return new Promise(resolve => {
-        axios.get('http://kissmp.online:3692/latest', {timeout: 1000}).then(apiRequest => {
+        axios.get('http://kissmp.thehellbox.ru:3692/latest', {timeout: 1000}).then(apiRequest => {
             console.log("api is succeeding");
             cache.lastUpdated = Date.now();
             cache.data = {
